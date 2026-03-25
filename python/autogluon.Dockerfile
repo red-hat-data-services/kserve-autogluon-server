@@ -18,6 +18,9 @@ ENV VIRTUAL_ENV=${VENV_PATH}
 RUN uv venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
+# Copy storage directory for editable install
+COPY storage storage
+
 # ========== Install kserve dependencies ==========
 COPY kserve/pyproject.toml kserve/uv.lock kserve/
 RUN cd kserve && uv sync --active --no-cache
@@ -26,10 +29,7 @@ COPY kserve kserve
 RUN cd kserve && uv sync --active --no-cache
 
 # ========== Install kserve storage dependencies ==========
-COPY storage/pyproject.toml storage/uv.lock storage/
 RUN cd storage && uv sync --active --no-cache
-
-COPY storage storage
 RUN cd storage && uv pip install . --no-cache
 
 # ========== Install autogluonserver dependencies ==========
