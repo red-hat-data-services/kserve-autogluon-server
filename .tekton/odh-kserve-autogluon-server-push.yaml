@@ -5,17 +5,14 @@ metadata:
     build.appstudio.openshift.io/repo: https://github.com/red-hat-data-services/kserve-autogluon-server?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
-    build.appstudio.redhat.com/pull_request_number: "{{pull_request_number}}"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-comment: "^/build-konflux-autogluon"
-    pipelinesascode.tekton.dev/on-event: "[pull_request]"
+    pipelinesascode.tekton.dev/on-event: "[push]"
     pipelinesascode.tekton.dev/on-target-branch: "[main]"
-    pipelinesascode.tekton.dev/cancel-in-progress: "true"
   labels:
     appstudio.openshift.io/application: automation
     appstudio.openshift.io/component: odh-kserve-autogluon-server
     pipelines.appstudio.openshift.io/type: build
-  name: odh-kserve-autogluon-server-on-pull-request
+  name: odh-kserve-autogluon-server-push
   namespace: rhoai-tenant
 spec:
   timeouts:
@@ -27,13 +24,15 @@ spec:
       value: '{{revision}}'
     - name: additional-tags
       value:
-        - 'pr-{{pull_request_number}}-into-{{target_branch}}'
+        - '{{target_branch}}'
     - name: additional-labels
       value:
-        - version=on-pr-{{revision}}
+        - version={{revision}}
         - io.openshift.tags=odh-kserve-autogluon-server
     - name: output-image
-      value: quay.io/rhoai/pull-request-pipelines:odh-kserve-autogluon-server-{{revision}}
+      value: quay.io/rhoai/odh-kserve-autogluon-server-rhel9:{{target_branch}}
+    - name: rhoai-version
+      value: "3.4.0"
     - name: build-platforms
       value:
         - linux/x86_64
@@ -41,7 +40,7 @@ spec:
         - linux/s390x
         - linux-m2xlarge/arm64
     - name: image-expires-after
-      value: 5d
+      value: ""
     - name: dockerfile
       value: Dockerfile.konflux.autogluon
     - name: path-context
@@ -72,7 +71,7 @@ spec:
       - name: pathInRepo
         value: pipelines/multi-arch-container-build.yaml
   taskRunTemplate:
-    serviceAccountName: build-pipeline-pull-request-pipelines
+    serviceAccountName: build-pipeline-push-pipelines
   workspaces:
     - name: git-auth
       secret:
