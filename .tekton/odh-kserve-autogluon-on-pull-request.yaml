@@ -53,7 +53,15 @@ spec:
         [
           {
             "type": "pip",
-            "path": "."
+            "path": "python/kserve"
+          },
+          {
+            "type": "pip",
+            "path": "python/storage"
+          },
+          {
+            "type": "pip",
+            "path": "python/autogluonserver"
           }
         ]
     - name: prefetch-log-level
