@@ -23,8 +23,8 @@ require (
 	github.com/kedacore/keda/v2 v2.17.3
 	github.com/kelseyhightower/envconfig v1.4.0
 	github.com/llm-d/llm-d-workload-variant-autoscaler v0.5.1
-	github.com/onsi/ginkgo/v2 v2.27.3
-	github.com/onsi/gomega v1.38.3
+	github.com/onsi/ginkgo/v2 v2.27.5
+	github.com/onsi/gomega v1.39.0
 	github.com/open-telemetry/opentelemetry-operator v0.113.0
 	github.com/parquet-go/parquet-go v0.27.0
 	github.com/pkg/errors v0.9.1
@@ -46,7 +46,7 @@ require (
 	k8s.io/apimachinery v0.34.3
 	k8s.io/client-go v0.34.3
 	k8s.io/code-generator v0.34.3
-	k8s.io/component-helpers v0.34.0
+	k8s.io/component-helpers v0.34.3
 	k8s.io/klog/v2 v2.130.1
 	k8s.io/kube-openapi v0.0.0-20250910181357-589584f1c912
 	k8s.io/utils v0.0.0-20251002143259-bc988d571ff4
@@ -56,7 +56,7 @@ require (
 	sigs.k8s.io/controller-runtime v0.22.4
 	sigs.k8s.io/gateway-api v1.4.2-0.20260116062110-0d0ca872766e
 	sigs.k8s.io/gateway-api-inference-extension v1.3.0
-	sigs.k8s.io/lws v0.7.0
+	sigs.k8s.io/lws v0.8.0
 	sigs.k8s.io/yaml v1.6.0
 )
 
