@@ -319,8 +319,8 @@ def _build_v2_outputs(
                 )
             return outputs, metadata
 
-        outputs: List[InferOutput] = []
-        metadata: List[Dict] = []
+        multi_outputs: List[InferOutput] = []
+        multi_metadata: List[Dict] = []
         for col in result.columns:
             col_name = str(col)
             values = pd.to_numeric(result[col], errors="coerce").to_numpy(
@@ -328,9 +328,9 @@ def _build_v2_outputs(
             )
             output = InferOutput(name=col_name, shape=[len(values)], datatype="FP64")
             output.set_data_from_numpy(values, binary_data=False)
-            outputs.append(output)
-            metadata.append({"name": col_name, "datatype": "FP64", "shape": [-1]})
-        return outputs, metadata
+            multi_outputs.append(output)
+            multi_metadata.append({"name": col_name, "datatype": "FP64", "shape": [-1]})
+        return multi_outputs, multi_metadata
 
     if isinstance(result, np.ndarray):
         arr = result
@@ -380,7 +380,7 @@ def _build_v2_outputs(
     return [output], [{"name": "predictions", "datatype": "BYTES", "shape": [-1]}]
 
 
-class AutoGluonModel(Model):
+class AutoGluonTabularModel(Model):
     def __init__(self, name: str, model_dir: str):
         super().__init__(name)
         self.name = name
@@ -445,7 +445,9 @@ class AutoGluonModel(Model):
         ]
 
     def predict(
-        self, payload: Union[Dict, InferRequest], headers: Dict[str, str] = None
+        self,
+        payload: Union[Dict, InferRequest],
+        headers: Optional[Dict[str, str]] = None,
     ) -> Union[Dict, InferResponse]:
         try:
             if isinstance(payload, InferRequest):
