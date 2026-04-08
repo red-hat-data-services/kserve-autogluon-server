@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10, <3.13"
 resolution-markers = [
     "python_full_version >= '3.12'",
@@ -1030,7 +1030,7 @@ wheels = [
 
 [[package]]
 name = "jpmml-evaluator"
-version = "0.10.5"
+version = "0.16.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "jpype1" },
@@ -1038,7 +1038,10 @@ dependencies = [
     { name = "py4j" },
     { name = "pyjnius" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5f/5a/344bafdda29d292a9a399c9d40fe4cedc318791e0c317ef391ff2ca1a7aa/jpmml_evaluator-0.10.5.tar.gz", hash = "sha256:10bab5e1c78d36f0e39c152b472c098249ac7a8f96f4d46af42bd2169338a8bf", size = 8524547, upload-time = "2024-11-26T07:07:51.77Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/1f/fc/56046cf6ef29e979c006b652cf4ef89e0fd95edb509d7b0610771d5290c4/jpmml_evaluator-0.16.0.tar.gz", hash = "sha256:cde5b2bc0f296afc9c2c3c8eca0ce616463296675800b5b8d3a756fecd1a1278", size = 8786347, upload-time = "2026-02-18T10:50:09.909Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ac/ee/7494344aea5170186972593a0639963c825081cd4ac56bd5a07802cb5292/jpmml_evaluator-0.16.0-py3-none-any.whl", hash = "sha256:4c35160863b349997f5e487193627692062d8f79ce2db37b11ad1fc9065d25d4", size = 8793232, upload-time = "2026-02-18T10:50:07.325Z" },
+]
 
 [[package]]
 name = "jpype1"
@@ -1527,7 +1530,7 @@ test = [
 
 [package.metadata]
 requires-dist = [
-    { name = "jpmml-evaluator", specifier = "~=0.10.3" },
+    { name = "jpmml-evaluator", specifier = "~=0.16.0" },
     { name = "kserve", directory = "../kserve" },
     { name = "kserve-storage", directory = "../storage" },
     { name = "setuptools", specifier = ">=70.0.0,<71.0.0" },
