@@ -1,6 +1,6 @@
 ARG PYTHON_VERSION=3.12
 #ARG BASE_IMAGE=python:${PYTHON_VERSION}-slim
-ARG BASE_IMAGE=registry.redhat.io/ubi9/python-312-minimal@sha256:3493394baa7957cc203c13f22ef1af7f7a59c132196f042f57fde30a9658356c
+ARG BASE_IMAGE=registry.redhat.io/ubi9/python-312-minimal@sha256:d39ebb9fb88e334b1d6a38385a264c85e1f1e6770dcd8de49466346fb7c5b7d4
 ARG VENV_PATH=/prod_venv
 
 FROM ${BASE_IMAGE} AS builder
