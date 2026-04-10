@@ -50,7 +50,7 @@ FROM ${BASE_IMAGE} AS prod
 
 # Runtime deps for AutoGluon backends (LightGBM, XGBoost, etc.) that use OpenMP
 USER root
-RUN microdnf install -y libgomp && && microdnf clean all
+RUN microdnf install -y libgomp && microdnf clean all
 
 COPY third_party third_party
 
