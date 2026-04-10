@@ -61,13 +61,13 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN useradd kserve -m -u 1000 -d /home/kserve
 
 COPY --from=builder --chown=kserve:kserve /opt/app-root/src/third_party third_party
-COPY --from=builder --chown=kserve:kserve /opt/app-root/src/$VIRTUAL_ENV $VIRTUAL_ENV
+COPY --from=builder --chown=kserve:kserve $VIRTUAL_ENV $VIRTUAL_ENV
 COPY --from=builder /opt/app-root/src/kserve kserve
 COPY --from=builder /opt/app-root/src/storage storage
 COPY --from=builder /opt/app-root/src/autogluonserver autogluonserver
 
 USER 1000
-ENV PYTHONPATH=/autogluonserver
+ENV PYTHONPATH=/opt/app-root/src/autogluonserver
 ENTRYPOINT ["python", "-m", "autogluonserver"]
 LABEL com.redhat.component="odh-kserve-autogluon-server-container" \
       name="managed-open-data-hub/odh-kserve-autogluon-server-rhel9" \
