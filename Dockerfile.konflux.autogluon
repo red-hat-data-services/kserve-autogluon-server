@@ -18,17 +18,17 @@ COPY storage storage
 COPY autogluonserver autogluonserver
 
 # ========== Install all dependencies (hermeto) ==========
-RUN uv pip install --index-url https://console.redhat.com/api/pypi/public-rhai/rhoai/3.4/cpu-ubi9/simple/ \
+RUN uv --offline pip install --no-build-isolation --index-url https://console.redhat.com/api/pypi/public-rhai/rhoai/3.4/cpu-ubi9/simple/ \
     -r /opt/app-root/autogluonserver/autogluon-all-requirements.txt
 
 # ========== Install kserve dependencies ==========
-RUN --network=none cd kserve && uv --offline pip install --no-build-isolation .
+RUN cd kserve && uv --offline pip install --no-build-isolation .
 
 # ========== Install kserve storage dependencies ==========
-RUN --network=none cd storage && uv --offline pip install --no-build-isolation .
+RUN cd storage && uv --offline pip install --no-build-isolation .
 
 # ========== Install autogluonserver dependencies ==========
-RUN --network=none cd autogluonserver && uv --offline pip install --no-build-isolation .
+RUN cd autogluonserver && uv --offline pip install --no-build-isolation .
 
 # Generate third-party licenses
 COPY pyproject.toml pyproject.toml
