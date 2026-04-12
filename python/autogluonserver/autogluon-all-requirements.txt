@@ -430,7 +430,7 @@ safetensors==0.7.0
     #   accelerate
     #   peft
     #   transformers
-scikit-learn==1.7.2
+scikit-learn==1.8.0
     # via
     #   autogluon-core
     #   autogluon-features
