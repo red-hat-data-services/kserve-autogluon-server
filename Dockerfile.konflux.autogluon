@@ -1,27 +1,14 @@
-ARG PYTHON_VERSION=3.12
-#ARG BASE_IMAGE=python:${PYTHON_VERSION}-slim
-ARG BASE_IMAGE=registry.redhat.io/ubi9/python-312-minimal@sha256:3493394baa7957cc203c13f22ef1af7f7a59c132196f042f57fde30a9658356c
-ARG VENV_PATH=/prod_venv
+ARG BASE_IMAGE="registry.redhat.io/rhai/base-image-cpu-rhel9@sha256:118425714f88c5b24cd67e828e0bcc7a9bc634ab2a1448e8f0975dfd85aea45c"
 
 FROM ${BASE_IMAGE} AS builder
 
 USER root
 
-ENV TMPDIR=/var/tmp
-
-# Install system dependencies
-RUN microdnf install -y python3.12-devel gcc gcc-c++ make tar gzip && microdnf clean all
-
-# Install uv
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh && \
-    ln -s /root/.local/bin/uv /usr/local/bin/uv
+# # Install system dependencies
+# RUN microdnf install -y python3.12-devel gcc gcc-c++ make tar gzip && microdnf clean all
 
 # Create virtual environment
-ARG VENV_PATH
-ENV VIRTUAL_ENV=${VENV_PATH}
-RUN uv venv $VIRTUAL_ENV
-
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+RUN uv venv -p 3.12 && source .venv/bin/activate
 
 # ========== Copy all dependencies ==========
 COPY kserve/pyproject.toml kserve/
@@ -32,7 +19,7 @@ COPY autogluonserver autogluonserver
 
 # ========== Install all dependencies (hermeto) ==========
 RUN uv pip install --index-url https://console.redhat.com/api/pypi/public-rhai/rhoai/3.4/cpu-ubi9/simple/ \
-    -r /opt/app-root/src/autogluonserver/autogluon-all-requirements.txt
+    -r /opt/app-root/autogluonserver/autogluon-all-requirements.txt
 
 # ========== Install kserve dependencies ==========
 RUN cd kserve && uv pip install . --no-cache
@@ -55,23 +42,14 @@ FROM ${BASE_IMAGE} AS prod
 
 # Runtime deps for AutoGluon backends (LightGBM, XGBoost, etc.) that use OpenMP
 USER root
-RUN microdnf install -y libgomp && microdnf clean all
+# RUN microdnf install -y libgomp && microdnf clean all
 
 # Activate virtual env
-ARG VENV_PATH
-ENV VIRTUAL_ENV=${VENV_PATH}
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+COPY --from=builder --chown=1001 /opt/app-root/ /opt/app-root/
 
-RUN useradd kserve -m -u 1000 -d /home/kserve
 
-COPY --from=builder --chown=kserve:kserve /opt/app-root/src/third_party third_party
-COPY --from=builder --chown=kserve:kserve $VIRTUAL_ENV $VIRTUAL_ENV
-COPY --from=builder /opt/app-root/src/kserve kserve
-COPY --from=builder /opt/app-root/src/storage storage
-COPY --from=builder /opt/app-root/src/autogluonserver autogluonserver
-
-USER 1000
-ENV PYTHONPATH=/opt/app-root/src/autogluonserver
+USER 1001
+ENV PYTHONPATH=/opt/app-root/autogluonserver
 ENTRYPOINT ["python", "-m", "autogluonserver"]
 LABEL com.redhat.component="odh-kserve-autogluon-server-container" \
       name="managed-open-data-hub/odh-kserve-autogluon-server-rhel9" \
