@@ -22,13 +22,13 @@ RUN uv pip install --index-url https://console.redhat.com/api/pypi/public-rhai/r
     -r /opt/app-root/autogluonserver/autogluon-all-requirements.txt
 
 # ========== Install kserve dependencies ==========
-RUN cd kserve && uv pip install . --no-cache
+RUN --network=none cd kserve && uv --offline pip install --no-build-isolation .
 
 # ========== Install kserve storage dependencies ==========
-RUN cd storage && uv pip install . --no-cache
+RUN --network=none cd storage && uv --offline pip install --no-build-isolation .
 
 # ========== Install autogluonserver dependencies ==========
-RUN cd autogluonserver && uv pip install . --no-cache
+RUN --network=none cd autogluonserver && uv --offline pip install --no-build-isolation .
 
 # Generate third-party licenses
 COPY pyproject.toml pyproject.toml

@@ -165,6 +165,8 @@ h11==0.16.0
     #   httpcore
     #   kserve
     #   uvicorn
+hatchling==1.29.0
+    # via autogluonserver (./autogluonserver/pyproject.toml)
 hf-transfer==0.1.9
     # via huggingface-hub
 hf-xet==1.4.3
