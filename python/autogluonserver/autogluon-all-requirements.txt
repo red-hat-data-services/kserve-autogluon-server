@@ -1,0 +1,589 @@
+--index-url https://console.redhat.com/api/pypi/public-rhai/rhoai/3.4/cpu-ubi9/simple/
+
+absl-py==2.4.0
+    # via tensorboard
+accelerate==1.13.0
+    # via
+    #   autogluon-timeseries
+    #   chronos-forecasting
+    #   peft
+adagio==0.2.6
+    # via fugue
+aiohappyeyeballs==2.6.1
+    # via aiohttp
+aiohttp==3.13.5
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve-storage (./storage/pyproject.toml)
+    #   fsspec
+    #   kserve
+    #   kserve-storage
+aiosignal==1.4.0
+    # via aiohttp
+alembic==1.18.4
+    # via optuna
+annotated-doc==0.0.4
+    # via fastapi
+annotated-types==0.7.0
+    # via pydantic
+anyio==4.13.0
+    # via
+    #   httpx
+    #   starlette
+    #   watchfiles
+attrs==26.1.0
+    # via aiohttp
+autogluon.common==1.5.0+rhaiv.1
+    # via
+    #   autogluon-core
+    #   autogluon-features
+    #   autogluon-timeseries
+autogluon.core==1.5.0+rhaiv.1
+    # via
+    #   autogluon-tabular
+    #   autogluon-timeseries
+autogluon.features==1.5.0+rhaiv.1
+    # via
+    #   autogluon-tabular
+    #   autogluon-timeseries
+autogluon.tabular==1.5.0+rhaiv.1
+    # via
+    #   autogluonserver (./autogluonserver/pyproject.toml)
+    #   autogluon-timeseries
+autogluon.timeseries==1.5.0+rhaiv.1
+    # via autogluonserver (./autogluonserver/pyproject.toml)
+boto3==1.42.87
+    # via
+    #   kserve-storage (./storage/pyproject.toml)
+    #   autogluon-common
+    #   autogluon-core
+    #   kserve-storage
+botocore==1.42.87
+    # via
+    #   boto3
+    #   s3transfer
+certifi==2026.2.25
+    # via
+    #   httpcore
+    #   httpx
+    #   kubernetes
+    #   requests
+cffi==2.0.0
+    # via cryptography
+charset-normalizer==3.4.7
+    # via requests
+chronos-forecasting==2.2.2
+    # via autogluon-timeseries
+click==8.3.2
+    # via uvicorn
+cloudevents==1.12.1
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+cloudpickle==3.1.2
+    # via
+    #   mlforecast
+    #   statsforecast
+colorlog==6.10.1
+    # via optuna
+contourpy==1.3.3
+    # via matplotlib
+coreforecast==0.0.16
+    # via
+    #   autogluon-timeseries
+    #   mlforecast
+    #   statsforecast
+cryptography==46.0.7
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve-storage (./storage/pyproject.toml)
+    #   kserve
+    #   kserve-storage
+cycler==0.12.1
+    # via matplotlib
+deprecation==2.1.0
+    # via cloudevents
+dulwich==1.1.0
+    # via
+    #   kserve-storage (./storage/pyproject.toml)
+    #   kserve-storage
+durationpy==0.10
+    # via kubernetes
+einops==0.8.2
+    # via
+    #   autogluon-timeseries
+    #   chronos-forecasting
+fastapi==0.135.3
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+filelock==3.25.2
+    # via
+    #   huggingface-hub
+    #   torch
+    #   transformers
+fonttools==4.62.1
+    # via matplotlib
+frozenlist==1.8.0
+    # via
+    #   aiohttp
+    #   aiosignal
+fsspec==2026.3.0
+    # via
+    #   huggingface-hub
+    #   lightning
+    #   mlforecast
+    #   pytorch-lightning
+    #   torch
+    #   triad
+fugue==0.9.7
+    # via
+    #   autogluon-timeseries
+    #   statsforecast
+gluonts==0.16.2
+    # via autogluon-timeseries
+greenlet==3.4.0
+    # via sqlalchemy
+grpc-interceptor==0.15.4
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+grpcio==1.80.0
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   grpc-interceptor
+    #   grpcio-tools
+    #   kserve
+    #   tensorboard
+grpcio-tools==1.80.0
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+h11==0.16.0
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   httpcore
+    #   kserve
+    #   uvicorn
+hf-transfer==0.1.9
+    # via huggingface-hub
+hf-xet==1.4.3
+    # via huggingface-hub
+httpcore==1.0.9
+    # via httpx
+httptools==0.7.1
+    # via uvicorn
+httpx==0.28.1
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+huggingface-hub==0.36.2
+    # via
+    #   kserve-storage (./storage/pyproject.toml)
+    #   accelerate
+    #   kserve-storage
+    #   peft
+    #   tokenizers
+    #   transformers
+idna==3.11
+    # via
+    #   anyio
+    #   httpx
+    #   requests
+    #   yarl
+jinja2==3.1.6
+    # via torch
+jmespath==1.1.0
+    # via
+    #   boto3
+    #   botocore
+joblib==1.5.3
+    # via
+    #   autogluon-common
+    #   autogluon-timeseries
+    #   scikit-learn
+kiwisolver==1.5.0
+    # via matplotlib
+kubernetes==35.0.0
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+lightgbm==4.6.0
+    # via
+    #   autogluonserver (./autogluonserver/pyproject.toml)
+    #   autogluon-tabular
+lightning==2.6.1
+    # via autogluon-timeseries
+lightning-utilities==0.15.3
+    # via
+    #   lightning
+    #   pytorch-lightning
+    #   torchmetrics
+llvmlite==0.47.0
+    # via numba
+mako==1.3.10
+    # via alembic
+markdown==3.10.2
+    # via tensorboard
+markupsafe==3.0.3
+    # via
+    #   jinja2
+    #   mako
+    #   werkzeug
+matplotlib==3.10.8
+    # via autogluon-core
+mlforecast==0.14.0
+    # via autogluon-timeseries
+mpmath==1.3.0
+    # via sympy
+multidict==6.7.1
+    # via
+    #   aiohttp
+    #   yarl
+networkx==3.6.1
+    # via
+    #   autogluon-core
+    #   autogluon-tabular
+    #   autogluon-timeseries
+    #   torch
+numba==0.65.0
+    # via
+    #   mlforecast
+    #   statsforecast
+    #   window-ops
+numpy==2.1.3
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   accelerate
+    #   autogluon-common
+    #   autogluon-core
+    #   autogluon-features
+    #   autogluon-tabular
+    #   autogluon-timeseries
+    #   chronos-forecasting
+    #   contourpy
+    #   coreforecast
+    #   gluonts
+    #   kserve
+    #   lightgbm
+    #   matplotlib
+    #   numba
+    #   optuna
+    #   pandas
+    #   patsy
+    #   peft
+    #   scikit-learn
+    #   scipy
+    #   statsforecast
+    #   statsmodels
+    #   tensorboard
+    #   torchmetrics
+    #   transformers
+    #   triad
+    #   utilsforecast
+    #   window-ops
+    #   xgboost
+oauthlib==3.3.1
+    # via requests-oauthlib
+optuna==4.8.0
+    # via mlforecast
+orjson==3.11.8
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   autogluon-timeseries
+    #   kserve
+packaging==26.0
+    # via
+    #   accelerate
+    #   deprecation
+    #   huggingface-hub
+    #   lightning
+    #   lightning-utilities
+    #   matplotlib
+    #   mlforecast
+    #   optuna
+    #   peft
+    #   pytorch-lightning
+    #   statsmodels
+    #   tensorboard
+    #   torchmetrics
+    #   transformers
+    #   utilsforecast
+pandas==2.3.3
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   autogluon-common
+    #   autogluon-core
+    #   autogluon-features
+    #   autogluon-tabular
+    #   autogluon-timeseries
+    #   fugue
+    #   gluonts
+    #   kserve
+    #   mlforecast
+    #   statsforecast
+    #   statsmodels
+    #   triad
+    #   utilsforecast
+patsy==1.0.2
+    # via statsmodels
+peft==0.17.1
+    # via autogluon-timeseries
+pillow==12.2.0
+    # via
+    #   matplotlib
+    #   tensorboard
+prometheus-client==0.25.0
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+propcache==0.4.1
+    # via
+    #   aiohttp
+    #   yarl
+protobuf==6.33.6
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   grpcio-tools
+    #   kserve
+    #   tensorboard
+    #   transformers
+psutil==5.9.8
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   accelerate
+    #   autogluon-common
+    #   kserve
+    #   peft
+pyarrow==20.0.0
+    # via
+    #   autogluon-common
+    #   triad
+pycparser==3.0
+    # via cffi
+pydantic==2.12.5
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   fastapi
+    #   gluonts
+    #   kserve
+pydantic-core==2.41.5
+    # via pydantic
+pyparsing==3.3.2
+    # via matplotlib
+python-dateutil==2.9.0.post0
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   botocore
+    #   kserve
+    #   kubernetes
+    #   matplotlib
+    #   pandas
+python-dotenv==1.2.2
+    # via uvicorn
+python-multipart==0.0.25
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+pytorch-lightning==2.6.1
+    # via lightning
+pytz==2026.1.post1
+    # via pandas
+pyyaml==6.0.3
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   accelerate
+    #   autogluon-common
+    #   huggingface-hub
+    #   kserve
+    #   kubernetes
+    #   lightning
+    #   optuna
+    #   peft
+    #   pytorch-lightning
+    #   transformers
+    #   uvicorn
+regex==2026.4.4
+    # via transformers
+requests==2.33.1
+    # via
+    #   kserve-storage (./storage/pyproject.toml)
+    #   autogluon-common
+    #   autogluon-core
+    #   huggingface-hub
+    #   kserve-storage
+    #   kubernetes
+    #   requests-oauthlib
+    #   transformers
+requests-oauthlib==2.0.0
+    # via kubernetes
+s3transfer==0.16.0
+    # via boto3
+safetensors==0.7.0
+    # via
+    #   accelerate
+    #   peft
+    #   transformers
+scikit-learn==1.7.2
+    # via
+    #   autogluon-core
+    #   autogluon-features
+    #   autogluon-tabular
+    #   chronos-forecasting
+    #   mlforecast
+scipy==1.16.3
+    # via
+    #   autogluon-core
+    #   autogluon-tabular
+    #   autogluon-timeseries
+    #   lightgbm
+    #   scikit-learn
+    #   statsforecast
+    #   statsmodels
+    #   xgboost
+sentencepiece==0.2.1
+    # via transformers
+setuptools==80.10.2
+    # via
+    #   grpcio-tools
+    #   tensorboard
+    #   torch
+six==1.17.0
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+    #   kubernetes
+    #   python-dateutil
+    #   triad
+sqlalchemy==2.0.49
+    # via
+    #   alembic
+    #   optuna
+starlette==0.49.1
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   fastapi
+    #   kserve
+statsforecast==2.0.1
+    # via autogluon-timeseries
+statsmodels==0.14.6
+    # via statsforecast
+sympy==1.14.0
+    # via torch
+tabulate==0.10.0
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+tensorboard==2.20.0
+    # via autogluon-timeseries
+tensorboard-data-server==0.7.2
+    # via tensorboard
+threadpoolctl==3.6.0
+    # via
+    #   scikit-learn
+    #   statsforecast
+timing-asgi==0.3.2
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+tokenizers==0.22.2
+    # via transformers
+toolz==0.12.1
+    # via gluonts
+torch==2.10.0
+    # via
+    #   autogluonserver (./autogluonserver/pyproject.toml)
+    #   accelerate
+    #   autogluon-timeseries
+    #   chronos-forecasting
+    #   lightning
+    #   peft
+    #   pytorch-lightning
+    #   torchmetrics
+torchmetrics==1.9.0
+    # via
+    #   lightning
+    #   pytorch-lightning
+tqdm==4.67.3
+    # via
+    #   autogluon-common
+    #   autogluon-core
+    #   autogluon-timeseries
+    #   gluonts
+    #   huggingface-hub
+    #   lightning
+    #   optuna
+    #   peft
+    #   pytorch-lightning
+    #   statsforecast
+    #   transformers
+transformers==4.57.6
+    # via
+    #   autogluon-timeseries
+    #   chronos-forecasting
+    #   peft
+triad==1.0.2
+    # via
+    #   adagio
+    #   fugue
+triton==3.6.0
+    # via torch
+typing-extensions==4.15.0
+    # via
+    #   aiosignal
+    #   alembic
+    #   anyio
+    #   fastapi
+    #   gluonts
+    #   grpcio
+    #   huggingface-hub
+    #   lightning
+    #   lightning-utilities
+    #   pydantic
+    #   pydantic-core
+    #   pytorch-lightning
+    #   sqlalchemy
+    #   starlette
+    #   torch
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via
+    #   fastapi
+    #   pydantic
+tzdata==2026.1
+    # via pandas
+urllib3==2.6.3
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   botocore
+    #   dulwich
+    #   kserve
+    #   kubernetes
+    #   requests
+utilsforecast==0.2.11
+    # via
+    #   autogluon-timeseries
+    #   mlforecast
+    #   statsforecast
+uvicorn==0.44.0
+    # via
+    #   kserve (./kserve/pyproject.toml)
+    #   kserve
+uvloop==0.22.1
+    # via uvicorn
+watchfiles==1.1.1
+    # via uvicorn
+websocket-client==1.9.0
+    # via kubernetes
+websockets==16.0
+    # via uvicorn
+werkzeug==3.1.8
+    # via tensorboard
+window-ops==0.0.15
+    # via mlforecast
+xgboost==3.1.3
+    # via
+    #   autogluonserver (./autogluonserver/pyproject.toml)
+    #   autogluon-tabular
+yarl==1.23.0
+    # via aiohttp

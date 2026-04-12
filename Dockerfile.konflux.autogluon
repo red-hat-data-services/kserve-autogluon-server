@@ -23,21 +23,25 @@ RUN uv venv $VIRTUAL_ENV
 
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
-# ========== Install kserve dependencies ==========
-COPY kserve/pyproject.toml kserve/uv.lock kserve/
+# ========== Copy all dependencies ==========
+COPY kserve/pyproject.toml kserve/
 COPY kserve kserve
-COPY storage/pyproject.toml storage/uv.lock storage/
+COPY storage/pyproject.toml storage/
 COPY storage storage
+COPY autogluonserver autogluonserver
 
-RUN cd kserve && uv sync --active --no-cache
+# ========== Install all dependencies (hermeto) ==========
+RUN uv pip install --index-url https://console.redhat.com/api/pypi/public-rhai/rhoai/3.4/cpu-ubi9/simple/ \
+    -r /opt/app-root/src/autogluonserver/autogluon-all-requirements.txt
+
+# ========== Install kserve dependencies ==========
+RUN cd kserve && uv pip install . --no-cache
 
 # ========== Install kserve storage dependencies ==========
-RUN cd storage && uv sync --active --no-cache
 RUN cd storage && uv pip install . --no-cache
 
 # ========== Install autogluonserver dependencies ==========
-COPY autogluonserver autogluonserver
-RUN cd autogluonserver && uv sync --active --no-cache
+RUN cd autogluonserver && uv pip install . --no-cache
 
 # Generate third-party licenses
 COPY pyproject.toml pyproject.toml
