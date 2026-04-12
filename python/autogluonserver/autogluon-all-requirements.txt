@@ -167,7 +167,7 @@ h11==0.16.0
     #   uvicorn
 hatchling==1.29.0
     # via autogluonserver (./autogluonserver/pyproject.toml)
-hf-transfer==0.1.9; platform_machine != "s390x"
+#hf-transfer==0.1.9; platform_machine != "s390x"
     # via huggingface-hub
 hf-xet==1.4.3
     # via huggingface-hub
