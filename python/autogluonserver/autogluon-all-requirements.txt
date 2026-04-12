@@ -327,6 +327,8 @@ pandas==2.3.3
     #   statsmodels
     #   triad
     #   utilsforecast
+pathspec==1.0.4
+    # via hatchling
 patsy==1.0.2
     # via statsmodels
 peft==0.17.1
@@ -335,6 +337,8 @@ pillow==12.2.0
     # via
     #   matplotlib
     #   tensorboard
+pluggy==1.6.0
+    # via hatchling
 prometheus-client==0.25.0
     # via
     #   kserve (./kserve/pyproject.toml)
@@ -528,8 +532,10 @@ triad==1.0.2
     # via
     #   adagio
     #   fugue
-triton==3.6.0
+triton==3.6.0; platform_machine != "s390x"
     # via torch
+trove-classifiers==2026.1.14.14
+    # via hatchling
 typing-extensions==4.15.0
     # via
     #   aiosignal
