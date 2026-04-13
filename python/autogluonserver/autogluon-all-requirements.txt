@@ -311,7 +311,7 @@ packaging==26.0
     #   torchmetrics
     #   transformers
     #   utilsforecast
-pandas==2.3.3
+pandas==3.0.2
     # via
     #   kserve (./kserve/pyproject.toml)
     #   autogluon-common
