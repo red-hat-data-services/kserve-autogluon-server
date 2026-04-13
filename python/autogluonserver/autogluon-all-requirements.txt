@@ -354,7 +354,7 @@ protobuf==6.33.6
     #   kserve
     #   tensorboard
     #   transformers
-psutil==5.9.8
+psutil==7.2.2
     # via
     #   kserve (./kserve/pyproject.toml)
     #   accelerate
