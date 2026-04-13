@@ -437,7 +437,7 @@ scikit-learn==1.7.2
     #   autogluon-tabular
     #   chronos-forecasting
     #   mlforecast
-scipy==1.16.3
+scipy==1.17.1
     # via
     #   autogluon-core
     #   autogluon-tabular
