@@ -10,7 +10,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<=3.12"
+python = ">=3.14,<=3.14.4"
 kserve = { path = "../../../../../python/kserve", develop = true }
 kserve-storage = { path = "../../../../../python/storage", develop = true }
 alibi = { version = "^0.9.4", extras = ["shap"] } # From 0.9.5 alibi uses BSL license (removed tensorflow extra to allow newer tensorflow/protobuf)
