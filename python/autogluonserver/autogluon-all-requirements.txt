@@ -347,7 +347,7 @@ propcache==0.4.1
     # via
     #   aiohttp
     #   yarl
-protobuf==6.33.6
+protobuf==7.34.1
     # via
     #   kserve (./kserve/pyproject.toml)
     #   grpcio-tools
