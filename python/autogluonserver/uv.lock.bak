@@ -203,7 +203,7 @@ wheels = [
 ]
 
 [[package]]
-name = "autogluon-common"
+name = "autogluon.common"
 version = "1.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
@@ -223,11 +223,11 @@ wheels = [
 ]
 
 [[package]]
-name = "autogluon-core"
+name = "autogluon.core"
 version = "1.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "autogluon-common" },
+    { name = "autogluon.common" },
     { name = "boto3" },
     { name = "matplotlib" },
     { name = "networkx", version = "3.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
@@ -246,12 +246,18 @@ wheels = [
 ]
 
 [[package]]
-name = "autogluon-features"
+name = "autogluon.features"
 version = "1.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
+<<<<<<< HEAD:python/autogluonserver/uv.lock
     { name = "autogluon-common" },
     { name = "numpy" },
+=======
+    { name = "autogluon.common" },
+    { name = "numpy", version = "2.2.6", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
+    { name = "numpy", version = "2.3.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+>>>>>>> main:python/autogluonserver/uv.lock.bak
     { name = "pandas" },
     { name = "scikit-learn" },
 ]
@@ -261,12 +267,12 @@ wheels = [
 ]
 
 [[package]]
-name = "autogluon-tabular"
+name = "autogluon.tabular"
 version = "1.5.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "autogluon-core" },
-    { name = "autogluon-features" },
+    { name = "autogluon.core" },
+    { name = "autogluon.features" },
     { name = "networkx", version = "3.4.2", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
     { name = "networkx", version = "3.6.1", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
     { name = "numpy" },
@@ -334,8 +340,12 @@ name = "autogluonserver"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+<<<<<<< HEAD:python/autogluonserver/uv.lock
     { name = "autogluon-tabular" },
     { name = "autogluon-timeseries" },
+=======
+    { name = "autogluon.tabular" },
+>>>>>>> main:python/autogluonserver/uv.lock.bak
     { name = "catboost" },
     { name = "fastai" },
     { name = "kserve" },
@@ -358,8 +368,12 @@ test = [
 
 [package.metadata]
 requires-dist = [
+<<<<<<< HEAD:python/autogluonserver/uv.lock
     { name = "autogluon-tabular", specifier = "==1.5.0" },
     { name = "autogluon-timeseries", specifier = "==1.5.0" },
+=======
+    { name = "autogluon.tabular", specifier = "==1.5.0" },
+>>>>>>> main:python/autogluonserver/uv.lock.bak
     { name = "catboost", specifier = "==1.2.8" },
     { name = "fastai", specifier = "==2.8.5" },
     { name = "kserve", directory = "../kserve" },
