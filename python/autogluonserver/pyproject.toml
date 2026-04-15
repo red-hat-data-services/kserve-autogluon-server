@@ -16,7 +16,7 @@ dependencies = [
 ]
 name = "autogluonserver"
 version = "0.1.0"
-description = "Model Server implementation for AutoGluon TabularPredictor. Not intended for use outside KServe Frameworks Images."
+description = "Model Server implementation for AutoGluon TabularPredictor and TimeSeriesPredictor. Not intended for use outside KServe Frameworks Images."
 readme = "README.md"
 
 [dependency-groups]
