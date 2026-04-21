@@ -373,7 +373,7 @@ pydantic==2.12.5
     #   fastapi
     #   gluonts
     #   kserve
-pydantic-core==2.41.5
+pydantic-core==2.46.1
     # via pydantic
 pyparsing==3.3.2
     # via matplotlib
