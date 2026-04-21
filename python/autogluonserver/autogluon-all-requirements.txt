@@ -367,7 +367,7 @@ pyarrow==20.0.0
     #   triad
 pycparser==3.0
     # via cffi
-pydantic==2.12.5
+pydantic==2.13.1
     # via
     #   kserve (./kserve/pyproject.toml)
     #   fastapi
