@@ -294,7 +294,7 @@ orjson==3.11.8
     #   kserve (./kserve/pyproject.toml)
     #   autogluon-timeseries
     #   kserve
-packaging==26.0
+packaging==26.1
     # via
     #   accelerate
     #   deprecation
