@@ -58,7 +58,7 @@ boto3==1.42.87
     #   autogluon-common
     #   autogluon-core
     #   kserve-storage
-botocore==1.42.87
+botocore==1.42.89
     # via
     #   boto3
     #   s3transfer
