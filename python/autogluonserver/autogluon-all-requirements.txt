@@ -179,7 +179,7 @@ httpx==0.28.1
     # via
     #   kserve (./kserve/pyproject.toml)
     #   kserve
-huggingface-hub==0.36.2
+huggingface-hub==1.10.2
     # via
     #   kserve-storage (./storage/pyproject.toml)
     #   accelerate
