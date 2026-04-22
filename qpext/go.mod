@@ -10,7 +10,7 @@ require (
 	github.com/prometheus/common v0.67.4
 	github.com/stretchr/testify v1.11.1
 	go.uber.org/zap v1.27.1
-	knative.dev/serving v0.48.1
+	knative.dev/serving v0.48.2
 )
 
 require (
@@ -81,7 +81,7 @@ require (
 	k8s.io/klog/v2 v2.130.1 // indirect
 	k8s.io/utils v0.0.0-20250604170112-4c0f3b243397 // indirect
 	knative.dev/networking v0.0.0-20260120131110-a7cdca238a0d // indirect
-	knative.dev/pkg v0.0.0-20260120122510-4a022ed9999a // indirect
+	knative.dev/pkg v0.0.0-20260319144603-18c5d580ae64 // indirect
 	sigs.k8s.io/json v0.0.0-20241014173422-cfa47c3a1cc8 // indirect
 	sigs.k8s.io/randfill v1.0.0 // indirect
 	sigs.k8s.io/structured-merge-diff/v6 v6.3.0 // indirect
