@@ -33,24 +33,24 @@ anyio==4.13.0
     #   watchfiles
 attrs==26.1.0
     # via aiohttp
-autogluon.common==1.5.0+rhaiv.1
+autogluon.common==1.5.0+rhaiv.2
     # via
     #   autogluon-core
     #   autogluon-features
     #   autogluon-timeseries
-autogluon.core==1.5.0+rhaiv.1
+autogluon.core==1.5.0+rhaiv.2
     # via
     #   autogluon-tabular
     #   autogluon-timeseries
-autogluon.features==1.5.0+rhaiv.1
+autogluon.features==1.5.0+rhaiv.2
     # via
     #   autogluon-tabular
     #   autogluon-timeseries
-autogluon.tabular==1.5.0+rhaiv.1
+autogluon.tabular==1.5.0+rhaiv.2
     # via
     #   autogluonserver (./autogluonserver/pyproject.toml)
     #   autogluon-timeseries
-autogluon.timeseries==1.5.0+rhaiv.1
+autogluon.timeseries==1.5.0+rhaiv.2
     # via autogluonserver (./autogluonserver/pyproject.toml)
 boto3==1.42.87
     # via
