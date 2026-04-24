@@ -88,7 +88,7 @@ colorlog==6.10.1
     # via optuna
 contourpy==1.3.3
     # via matplotlib
-coreforecast==0.0.16
+coreforecast==0.0.17
     # via
     #   autogluon-timeseries
     #   mlforecast
