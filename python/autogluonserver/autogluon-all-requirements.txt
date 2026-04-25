@@ -117,7 +117,7 @@ fastapi==0.135.3
     # via
     #   kserve (./kserve/pyproject.toml)
     #   kserve
-filelock==3.25.2
+filelock==3.28.0
     # via
     #   huggingface-hub
     #   torch
