@@ -568,7 +568,7 @@ urllib3==2.6.3
     #   kserve
     #   kubernetes
     #   requests
-utilsforecast==0.2.11
+utilsforecast==0.2.15
     # via
     #   autogluon-timeseries
     #   mlforecast
