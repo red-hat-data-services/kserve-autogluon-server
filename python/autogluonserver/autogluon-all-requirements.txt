@@ -494,7 +494,7 @@ timing-asgi==0.3.2
     #   kserve
 tokenizers==0.22.2
     # via transformers
-toolz==0.12.1
+toolz==1.1.0
     # via gluonts
 torch==2.10.0
     # via
