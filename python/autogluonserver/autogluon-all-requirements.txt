@@ -76,7 +76,7 @@ chronos-forecasting==2.2.2
     # via autogluon-timeseries
 click==8.3.2
     # via uvicorn
-cloudevents==1.12.1
+cloudevents==2.0.0
     # via
     #   kserve (./kserve/pyproject.toml)
     #   kserve
