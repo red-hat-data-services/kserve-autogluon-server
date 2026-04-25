@@ -523,7 +523,7 @@ tqdm==4.67.3
     #   pytorch-lightning
     #   statsforecast
     #   transformers
-transformers==4.57.6
+transformers==5.5.4
     # via
     #   autogluon-timeseries
     #   chronos-forecasting
