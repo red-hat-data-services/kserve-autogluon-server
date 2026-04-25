@@ -253,7 +253,7 @@ numba==0.65.0
     #   mlforecast
     #   statsforecast
     #   window-ops
-numpy==2.1.3
+numpy==2.4.4
     # via
     #   kserve (./kserve/pyproject.toml)
     #   accelerate
