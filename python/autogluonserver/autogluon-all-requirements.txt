@@ -492,7 +492,7 @@ timing-asgi==0.3.2
     # via
     #   kserve (./kserve/pyproject.toml)
     #   kserve
-tokenizers==0.22.2
+tokenizers==0.23.1
     # via transformers
 toolz==0.12.1
     # via gluonts
