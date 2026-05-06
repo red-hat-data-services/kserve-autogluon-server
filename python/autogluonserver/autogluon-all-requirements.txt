@@ -327,7 +327,7 @@ pandas==2.3.3
     #   statsmodels
     #   triad
     #   utilsforecast
-pathspec==1.0.4
+pathspec==1.1.1
     # via hatchling
 patsy==1.0.2
     # via statsmodels
