@@ -1,95 +1,79 @@
-# AGENTS.md
+# kserve-autogluon-server
 
-This repository is the sharing space for Global Engineering's agentic SDLC community of practice. It exists to collect what each pilot team is doing and to evolve shared best practices across the organization.
+KServe (Kubernetes inference) fork with an **AutoGluon** model server in `python/autogluonserver/`. This file orients agents quickly; it does not document every module.
 
-## Repository Layout
+## Build & test commands
 
-```
-pilots/           One markdown file per org -- goals and repo links
-best-practices/   Patterns and techniques that emerge from the pilots
-demos/            Demo videos from each org
-presentations/    Presentations from each org
-pge-review/       Topics reviewed and discussed by P&GE leadership
-```
+**AutoGluon server (preferred loop for `python/autogluonserver/` changes)**
 
-### pilots/
+| Action | Command |
+|--------|---------|
+| Install deps | `cd python/autogluonserver && uv sync --active --group test` |
+| Test (typecheck + pytest) | `make test` (same directory) |
+| Test one file | `pytest tests/test_model.py -W ignore` |
+| Typecheck only | `make type_check` |
 
-Each file describes one org's agentic SDLC efforts: a short description of what the team is focused on, followed by a table of repositories with one-line descriptions. Orgs maintain their own repos elsewhere; this directory indexes them.
+**Fast single-file checks (Python, AutoGluon tree)** — use after `uv sync --active --group test` in `python/autogluonserver/`; no full build, no scanning the whole repo.
 
-### demos/
+| Action | Command |
+|--------|---------|
+| Lint one file | `make lint-file FILE=autogluonserver/tabular_model.py` |
+| Format one file | `make format-file FILE=autogluonserver/tabular_model.py` |
+| Typecheck one file | `make typecheck-file FILE=autogluonserver/tabular_model.py` |
 
-A collection of demo videos from each org showcasing their agentic SDLC efforts. Each entry has a title, link, and one-line description.
+`lint-file` / `format-file` use **`uvx ruff`** (no prior install). **`typecheck-file`** uses **`mypy`** like `make type_check` — use after `uv sync --active --group test` so `mypy` is on your PATH.
 
-### presentations/
+Equivalent from **repository root** (same `ruff.toml` rules):  
+`uvx ruff check --config ruff.toml python/autogluonserver/autogluonserver/tabular_model.py` — swap `check` for `format` to format.  
+Single-file mypy from `python/autogluonserver/` (with venv active):  
+`mypy --ignore-missing-imports autogluonserver/tabular_model.py`.
 
-A collection of presentations from each org on their agentic SDLC efforts. Each entry has a title, link, and one-line description.
+**Repo-wide Go / controller work**
 
-### pge-review/
+| Action | Command |
+|--------|---------|
+| Full Go test suite | `make test` from **repository root** (also runs fmt, vet, manifests, envtest — heavy) |
+| Format Python (optional before PR) | `make py-fmt` from root (`ruff format`, scopes `./python` …) |
+| Lint Python (optional before PR) | `make py-lint` from root (`ruff check`) |
+| Lint one Python file from root | `uvx ruff check --config ruff.toml path/to/file.py` (fast; no compile step) |
 
-Topics reviewed and discussed by P&GE leadership. Each entry records the date, topic, materials, and outcome.
+**Go (package-scoped, faster than full `make precommit`):** e.g. `go vet ./pkg/apis/serving/v1beta1/...` — Go vets packages, not isolated single files.
 
-### best-practices/
+**Do not use for a tight agent loop:** root `make test` when you only touched Python; **E2E** under `test/e2e/` (needs cluster / infra).
 
-Shared knowledge that emerges from the pilots. Organized by topic area:
+## Key conventions
 
-- **Skills** -- Reusable skill definitions that work across agent platforms
-- **Agent definitions** -- CLAUDE.md patterns, .cursorrules, agent configs, system prompts
-- **Context engineering** -- Prompt patterns, context hacks, retrieval strategies
-- **Tools** -- MCP servers, tool access patterns, gateway configurations
+- **`python/autogluonserver`** depends on local packages via `[tool.uv.sources]` in `pyproject.toml` (`../kserve`, `../storage`). Run installs **from that directory** so path deps resolve.
+- **Match layer to validation:** Python server → tests under `python/autogluonserver/`; Go or CRDs → root toolchain and `make test` when appropriate.
+- **New Python files** in this tree follow the existing Apache-2.0 header block like other `autogluonserver` modules.
+- **Imports:** extend patterns already used in `autogluonserver/` (KServe `InferRequest` / errors, pandas/numpy for tabular/time series).
 
-New topics and files get added as practices actually emerge. Empty scaffolding is not welcome.
+## Architecture (routing)
 
-## How to Contribute
+| If you are changing… | Start in… |
+|---------------------|-----------|
+| Tabular / time series serving logic | `python/autogluonserver/autogluonserver/` (`tabular_model.py`, `timeseries_model.py`, …) |
+| Tests for that server | `python/autogluonserver/tests/` |
+| Shared KServe Python runtime | `python/kserve/` |
+| Controllers, APIs, CRDs | `pkg/`, `config/`; see upstream KServe docs for depth |
 
-This repository is **AI-first**. Contributions are expected to come from AI agents, AI-assisted workflows, or through skills embedded in the repo itself.
+This repo is **large**. Prefer reading **neighbor files** and package READMEs over exploring top-down.
 
-### Adding or updating a pilot
+## PR / CI
 
-Edit or create the appropriate file in `pilots/`. Follow the existing format:
+**GitHub Actions** (`.github/workflows/autogluonserver.yml`) runs on PRs and pushes that touch `python/autogluonserver/`:
 
-1. Org name as the heading
-2. A short description of the team's agentic SDLC goals
-3. A table of repos: name, link, and one-line description
+| Job | What it runs |
+|-----|----------------|
+| **Lint (Ruff)** | `uvx ruff check --config ruff.toml python/autogluonserver` — no install of AutoGluon; failures name file + rule. |
+| **Mypy & pytest** | `uv sync --group test`, then `mypy`, then `pytest --tb=short -q` — separate steps so logs stay short and the failing gate is obvious. |
 
-### Sharing a best practice
+If **`uv sync`** fails resolving packages (e.g. `autogluon.tabular==…+rhaiv`), configure repository secret **`UV_EXTRA_INDEX_URL`** to your team’s PyPI index (see also `python/autogluonserver/autogluon-all-requirements.txt` for index hints).
 
-Add to or create a file in `best-practices/`. A good best practice entry includes:
+Contributor norms: [KServe Contributor Guide](https://kserve.github.io/website/docs/developer-guide/contribution).
 
-1. What the practice is and when to use it
-2. A concrete example or reference implementation
-3. Which pilot team(s) validated it
+## For AI agents
 
-### General contribution workflow
-
-1. Branch from `main`
-2. Make your changes using your AI coding tool of choice
-3. Open a pull request with a clear description of what changed and why
-4. PRs are reviewed by the community -- anyone can review, anyone can merge
-
-## Rules of Engagement
-
-1. **Share, don't gate.** This is a community of practice, not a governance body. The goal is to surface what works and make it easy to find, not to approve or block anyone's work.
-
-2. **Link, don't duplicate.** Project code lives in each team's own repos. This repo indexes and cross-references. Do not copy source code here.
-
-3. **Founding projects, not candidates.** The work each org has already invested in is treated as a founding contribution. These are not "seeds to evaluate" -- they are the starting point the community builds on.
-
-4. **Show your work.** Best practices should come from real experience in the pilots. "We tried X on project Y and it worked because Z" is more valuable than theoretical recommendations.
-
-5. **AI-native contributions.** Use AI agents to draft, review, and refine contributions. This repo practices what it preaches -- if your agentic workflow can't contribute here, that is useful signal about the workflow.
-
-6. **Respect team differences.** Different product teams have different upstream communities, compliance requirements, and workflow constraints. There is no single "right" approach. Practices that work well for one team may need adaptation for another, and that is expected.
-
-7. **Move fast, stay light.** Prefer a merged PR with a rough-but-useful practice over a perfect document that never ships. Iterate in the open.
-
-## For AI Agents
-
-When working in this repository:
-
-- Read `AGENTS.md` for repo-specific context
-- Read the relevant `pilots/*.md` file before modifying it
-- Follow the existing format and structure of neighboring files
-- Do not create empty placeholder files or directories
-- Do not add governance, process, or approval-gate documentation
-- Keep descriptions concise -- one line per repo, short paragraphs for overviews
-- All content in this repo is public domain (Unlicense)
+- Prefer **`AGENTS.md`** as the single root context file; **`CLAUDE.md`** only imports this repo’s `@AGENTS.md`.
+- After edits under `python/autogluonserver/`, run **`make lint-file`**, **`make typecheck-file`**, or **`make test`** as appropriate; prefer single-file checks during iteration.
+- Do not add empty scaffolding docs or governance-only files unless asked.
