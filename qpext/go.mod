@@ -89,4 +89,4 @@ require (
 )
 
 // github.com/lyft/protoc-gen-validate was moved to github.com/envoyproxy/protoc-gen-validate
-replace github.com/lyft/protoc-gen-validate => github.com/envoyproxy/protoc-gen-validate v1.0.4
+replace github.com/lyft/protoc-gen-validate => github.com/envoyproxy/protoc-gen-validate v1.3.3

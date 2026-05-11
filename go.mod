@@ -99,7 +99,7 @@ require (
 	github.com/docker/docker v28.4.0+incompatible // indirect
 	github.com/emicklei/go-restful/v3 v3.13.0 // indirect
 	github.com/envoyproxy/go-control-plane/envoy v1.36.0 // indirect
-	github.com/envoyproxy/protoc-gen-validate v1.2.1 // indirect
+	github.com/envoyproxy/protoc-gen-validate v1.3.3 // indirect
 	github.com/evanphx/json-patch/v5 v5.9.11 // indirect
 	github.com/expr-lang/expr v1.17.2 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
@@ -229,4 +229,4 @@ replace sigs.k8s.io/controller-runtime => sigs.k8s.io/controller-runtime v0.19.7
 replace github.com/expr-lang/expr => github.com/expr-lang/expr v1.17.7
 
 // github.com/lyft/protoc-gen-validate was moved to github.com/envoyproxy/protoc-gen-validate
-replace github.com/lyft/protoc-gen-validate => github.com/envoyproxy/protoc-gen-validate v1.0.4
+replace github.com/lyft/protoc-gen-validate => github.com/envoyproxy/protoc-gen-validate v1.3.3
