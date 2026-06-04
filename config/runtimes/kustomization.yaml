@@ -20,7 +20,7 @@ images:
   # SMS Only Runtimes
 - name: tensorflow-serving
   newName: tensorflow/serving
-  newTag: 2.6.2
+  newTag: 2.20.0
 
 - name: kserve-sklearnserver
   newName: kserve/sklearnserver
