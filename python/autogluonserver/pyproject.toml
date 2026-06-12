@@ -6,15 +6,10 @@ authors = [
 license = {text = "Apache-2.0"}
 requires-python = "<3.13,>=3.10"
 dependencies = [
-    "kserve",
-    "kserve-storage",
-    "catboost==1.2.8",
-    "lightgbm==4.6.0",
-    "xgboost==3.1.3",
-    "torch==2.9.1",
-    "fastai==2.8.5",
-    "autogluon.tabular==1.5.0",
-    "autogluon.timeseries==1.5.0",
+    "kserve @ file:///${PROJECT_ROOT}/../kserve",
+    "kserve-storage @ file:///${PROJECT_ROOT}/../storage",
+    "autogluon.tabular[lightgbm,xgboost,tabm,fastai]==1.5.0+rhaiv.3",
+    "autogluon.timeseries==1.5.0+rhaiv.3",
 ]
 name = "autogluonserver"
 version = "0.1.0"
@@ -32,7 +27,14 @@ dev = [
     "black[colorama]~=24.3.0",
 ]
 
+[tool.uv]
+# Red Hat custom index as the primary source for all packages
+index-url = "https://console.redhat.com/api/pypi/public-rhai/rhoai/3.5-EA2/cpu-ubi9/simple/"
+extra-index-url = ["https://pypi.org/simple/"]
+index-strategy = "unsafe-best-match"
+
 [tool.uv.sources]
+# Local path dependencies
 kserve = { path = "../kserve", editable = false }
 kserve-storage = { path = "../storage", editable = false }
 
