@@ -21,7 +21,7 @@ aiosignal==1.4.0
     # via aiohttp
 alembic==1.18.4
     # via optuna
-annotated-doc>=0.0.4-2
+annotated-doc==0.0.4-2
     # via
     #   fastapi
     #   typer
