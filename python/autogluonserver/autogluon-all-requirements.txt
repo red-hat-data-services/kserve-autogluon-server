@@ -573,7 +573,7 @@ utilsforecast==0.2.11
     #   autogluon-timeseries
     #   mlforecast
     #   statsforecast
-uvicorn==0.44.0
+uvicorn==0.49.0
     # via
     #   kserve (./kserve/pyproject.toml)
     #   kserve
