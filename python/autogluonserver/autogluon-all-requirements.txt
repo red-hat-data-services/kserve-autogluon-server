@@ -425,7 +425,7 @@ requests-oauthlib==2.0.0
     # via kubernetes
 s3transfer==0.16.0
     # via boto3
-safetensors==0.7.0
+safetensors==0.8.0
     # via
     #   accelerate
     #   peft
