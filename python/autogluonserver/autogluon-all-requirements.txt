@@ -1,5 +1,6 @@
 --index-url https://console.redhat.com/api/pypi/public-rhai/rhoai/3.5-EA2/cpu-ubi9/simple/
 
+
 absl-py==2.4.0
     # via tensorboard
 accelerate==1.14.0
@@ -21,7 +22,7 @@ aiosignal==1.4.0
     # via aiohttp
 alembic==1.18.4
     # via optuna
-annotated-doc==0.0.4-2
+annotated-doc==0.0.4
     # via
     #   fastapi
     #   typer
