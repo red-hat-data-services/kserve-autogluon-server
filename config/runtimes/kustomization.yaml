@@ -15,6 +15,7 @@ resources:
 - kserve-huggingfaceserver.yaml
 - kserve-huggingfaceserver-multinode.yaml
 - kserve-autogluonserver.yaml
+- kserve-vllmserver.yaml
 
 images:
   # SMS Only Runtimes
@@ -28,7 +29,7 @@ images:
 
 - name: mlserver
   newName: docker.io/seldonio/mlserver
-  newTag: 1.5.0
+  newTag: 1.7.1
 
 - name: kserve-xgbserver
   newName: kserve/xgbserver
@@ -54,7 +55,7 @@ images:
   newName: kserve/predictiveserver
   newTag: latest
 
-- name: kserve/model_server
+- name: kserve-autogluonserver
   newName: kserve/autogluonserver
   newTag: latest
   
@@ -69,3 +70,7 @@ images:
 - name: huggingfaceserver-gpu
   newName: kserve/huggingfaceserver
   newTag: latest-gpu
+  
+- name: vllmserver
+  newName: vllm/vllm-openai
+  newTag: latest
