@@ -151,6 +151,7 @@ var (
 	StorageSpecAnnotationKey                         = InferenceServiceInternalAnnotationsPrefix + "/storage-spec"
 	StorageSpecParamAnnotationKey                    = InferenceServiceInternalAnnotationsPrefix + "/storage-spec-param"
 	StorageSpecKeyAnnotationKey                      = InferenceServiceInternalAnnotationsPrefix + "/storage-spec-key"
+	StorageContainerNameAnnotationKey                = InferenceServiceInternalAnnotationsPrefix + "/storage-container-name"
 	LoggerInternalAnnotationKey                      = InferenceServiceInternalAnnotationsPrefix + "/logger"
 	LoggerSinkUrlInternalAnnotationKey               = InferenceServiceInternalAnnotationsPrefix + "/logger-sink-url"
 	LoggerModeInternalAnnotationKey                  = InferenceServiceInternalAnnotationsPrefix + "/logger-mode"
@@ -343,7 +344,10 @@ var (
 	IstioMeshGateway = "mesh"
 )
 
-const WorkerNodeSuffix = "worker"
+const (
+	WorkerNodeSuffix       = "worker"
+	WorkerNodeSuffixPlural = "workers"
+)
 
 // InferenceService Component enums
 const (
@@ -426,6 +430,20 @@ const (
 	LLMComponentWorkloadWorkerPrefill = "llminferenceservice-workload-worker-prefill"
 	LLMComponentWorkloadLeaderPrefill = "llminferenceservice-workload-leader-prefill"
 	LLMComponentInference             = "inference" // used in sample/template resources
+)
+
+// LLMInferenceService constants
+const (
+	// LLMISVCRoutingSidecarContainerName is the name of the routing sidecar container
+	// that handles prefill disaggregation routing.
+	LLMISVCRoutingSidecarContainerName = "llm-d-routing-sidecar"
+
+	LLMISVCDefaultServiceAccountName = "default"
+
+	// LLMISVCSchedulerAttachesLoRA controls whether the scheduler's tokenizer sidecar
+	// receives LoRA adapter artifacts. The tokenizer only performs tokenization and does
+	// not run inference, so LoRA weights are never needed.
+	LLMISVCSchedulerAttachesLoRA = false
 )
 
 // InferenceService canary constants
@@ -557,6 +575,7 @@ const (
 	LGBServer         = "kserve-lgbserver"
 	PaddleServer      = "kserve-paddleserver"
 	HuggingFaceServer = "kserve-huggingfaceserver"
+	VLLMServer        = "kserve-vllmserver"
 )
 
 // Server type annotation values
@@ -574,6 +593,7 @@ const (
 	ServerTypePyTorchServer     = "pytorchserver"
 	ServerTypeSKLearnServer     = "sklearnserver"
 	ServerTypeXGBoostServer     = "xgbserver"
+	ServerTypeVLLMServer        = "vllmserver"
 )
 
 // GetServerTypeFromRuntimeName converts runtime name to server type for backward compatibility.
@@ -586,6 +606,12 @@ func GetServerTypeFromRuntimeName(runtimeName string) string {
 		return ServerTypeTorchServe
 	case TritonServer:
 		return ServerTypeTritonServer
+	case TFServing:
+		return ServerTypeTensorflowServing
+	case HuggingFaceServer:
+		return ServerTypeHuggingFaceServer
+	case VLLMServer:
+		return ServerTypeVLLMServer
 	default:
 		return ""
 	}
@@ -631,6 +657,7 @@ const (
 	SupportedModelPaddle      = "paddle"
 	SupportedModelTriton      = "triton"
 	SupportedModelMLFlow      = "mlflow"
+	SupportedModelVLLM        = "vLLM"
 )
 
 type ProtocolVersion int
@@ -683,10 +710,18 @@ const (
 	DefaultPipelineParallelSize = 1
 )
 
+// MultiNode executor backend annotation
+// If not set, defaults to ray
+const (
+	MultiNodeExecutorBackendAnnotationKey = "multinode/executor-backend"
+	MultiNodeExecutorBackendMp            = "mp"
+)
+
 // Multi Node Labels
 var (
 	MultiNodeRoleLabelKey = "multinode/role"
 	MultiNodeHead         = "head"
+	MultiNodeWorker       = "worker"
 )
 
 // GetRawServiceLabel generate native service label
@@ -703,6 +738,12 @@ func GetRawWorkerServiceLabel(service string) string {
 func GetHeadServiceName(service string, isvcGeneration string) string {
 	isvcName := strings.TrimSuffix(service, "-predictor")
 	return isvcName + "-" + MultiNodeHead + "-" + isvcGeneration
+}
+
+// GetWorkerServiceName generate worker headless service name
+func GetWorkerServiceName(service string, isvcGeneration string) string {
+	isvcName := strings.TrimSuffix(service, "-predictor")
+	return isvcName + "-" + WorkerNodeSuffixPlural + "-" + isvcGeneration
 }
 
 func (e InferenceServiceComponent) String() string {

@@ -111,7 +111,7 @@ async def test_vllm_modelcache():
             ),
             args=[
                 "--model_name",
-                "hf-qwen-chat",
+                "qwen-chat",
                 "--max_model_len",
                 "512",
                 "--dtype",
@@ -121,6 +121,10 @@ async def test_vllm_modelcache():
                 client.V1EnvVar(
                     name="VLLM_CPU_KVCACHE_SPACE",
                     value="1",
+                ),
+                client.V1EnvVar(
+                    name="VLLM_ENABLE_V1_MULTIPROCESSING",
+                    value="0",
                 ),
             ],
             resources=V1ResourceRequirements(
