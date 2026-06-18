@@ -40,8 +40,8 @@ if __name__ == "__main__":
 
     except ModelMissingError:
         logger.error(
-            f"failed to locate model for model {args.model_name} under dir {args.model_dir},"
-            "trying loading from model repository."
+            f"failed to locate model for model {args.model_name} under dir {args.model_dir}, "
+            f"trying to load from model repository."
         )
         kserve.ModelServer(
             registered_models=AutoGluonModelRepository(args.model_dir)
