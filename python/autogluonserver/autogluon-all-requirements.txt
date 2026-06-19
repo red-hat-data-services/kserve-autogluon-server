@@ -350,8 +350,9 @@ httpx==0.28.1 \
     #   kserve
     #   python-fasthtml
     #   weasel
-huggingface-hub==0.36.2 \
-    --hash=sha256:9dbca7484c9269e61e6e4a8202b38c00654c9a68843ccc201049a6abc38cf412
+huggingface-hub==1.17.0 \
+    --hash=sha256:3b8156d23118e87f6a587648bfbc04f04a12a757ccb4ed298b35c4ae638bf24c \
+    --hash=sha256:fad842b6763ef70ebc3919665b1b9273645203185400a7d6c5eddc2323cc3435
     # via
     #   accelerate
     #   kserve-storage
