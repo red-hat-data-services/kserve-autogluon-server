@@ -960,8 +960,9 @@ tqdm==4.67.3 \
     #   spacy
     #   statsforecast
     #   transformers
-transformers==4.57.6 \
-    --hash=sha256:9ddc011d48c805b48c2ed52508beabbf385f3094677cbf0cd495b67162f42bf0
+transformers==5.10.2 \
+    --hash=sha256:8a669db546f82c7c3618cb46ceb0f0afd89292bc70f319c058f8332ec63e268d \
+    --hash=sha256:f9a44b9c8ca9ab1156b467f574d832ea066284299c2fd0ed84641ccb592751fc
     # via
     #   autogluon-timeseries
     #   chronos-forecasting
