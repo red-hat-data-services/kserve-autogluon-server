@@ -148,8 +148,9 @@ chronos-forecasting==2.2.2 \
 click==8.4.1 \
     --hash=sha256:b6631fcc106907263ae7f6376f80d967fd75c1902c3d2bb2ca1cead22e589b39
     # via uvicorn
-cloudevents==1.12.1 \
-    --hash=sha256:66ed12f538b3a041dcb91b0c92f77760c7ea547e8f078bf4bea6197f861afcd3
+cloudevents==2.1.0 \
+    --hash=sha256:43ecec250ce05b8f80105e9959b082ef3f603bf090cef235de9b4819d4387492 \
+    --hash=sha256:df0a105c10d74d0da667013c42931b883cf37af1c639a0cbe1aa32c3761de830
     # via kserve
 cloudpathlib==0.24.0 \
     --hash=sha256:705101c181a990a335cd83d870583f1457083faef090eaef69e3c53274392733
