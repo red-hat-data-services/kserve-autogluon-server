@@ -945,8 +945,9 @@ torchvision==0.26.0 \
     --hash=sha256:d979cf1e7f240fbeca6cc112f7b81682dcfadb9377e80a46b3f0de7150f1b740 \
     --hash=sha256:fa92f98a32083ef5b1a5671aec3b59b2061d8827c830438baf6fe1b020d6c782
     # via fastai
-tqdm==4.67.3 \
-    --hash=sha256:9cdaa3ef8944e8a64e15f580ac86aa264affc2da130173fa2f1893468a4befb7
+tqdm==4.68.2 \
+    --hash=sha256:89c230e8dbc67c7615c142487111222f878c77427ea09549960f62389e258add \
+    --hash=sha256:d4240441fb5353290b87d6a85968c9decc131a99b8c7faa28269d829de669ede
     # via
     #   autogluon-common
     #   autogluon-core
