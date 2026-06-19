@@ -485,7 +485,8 @@ numba==0.65.1 \
 numpy==2.1.0 \
     --hash=sha256:54875c1792ddcf6848099924ca72cbe7fa248b72b6138a84901d6f90478a9aba \
     --hash=sha256:633830f01ae158d5f53245701cb2a2d1081c7495cb73363a9161cef5675d94fa \
-    --hash=sha256:ea7bd74d96a9eebab4b367fa4fa5dc656809d54bf8e27336b9130e22ff280ffa
+    --hash=sha256:ea7bd74d96a9eebab4b367fa4fa5dc656809d54bf8e27336b9130e22ff280ffa \
+    --hash=sha256:fe942746475b8a745f4e1ded5fe5711a743b8a9fc4a25c7820fda1f396be4322
     # via
     #   accelerate
     #   autogluon-common
