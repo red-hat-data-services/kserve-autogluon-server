@@ -5,7 +5,7 @@ ARG WORKSPACE_DIR=/kserve-workspace
 #################### CUDA RUNTIME (Ubuntu 25.10) ####################
 # Custom CUDA runtime image since NVIDIA doesn't publish Ubuntu 25.10 images.
 # Uses the ubuntu2404 apt repo — packages are compatible across Ubuntu versions.
-FROM ubuntu:25.10 AS cuda-runtime
+FROM ubuntu:questing-20260610 AS cuda-runtime
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV NVARCH=x86_64
