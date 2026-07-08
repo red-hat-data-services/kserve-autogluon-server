@@ -20,16 +20,16 @@ COPY storage storage
 COPY autogluonserver autogluonserver
 
 # ========== Install all dependencies (hermetic) ==========
-RUN pip install --no-build-isolation \
+RUN uv pip install --no-build-isolation \
     -r /opt/app-root/autogluonserver/autogluon-all-requirements.txt   # Using index url from the autogluon-all-requirements.txt file
 
 # ========== Install local packages (kserve, storage, autogluonserver) without re-resolving dependencies ==========
 # Use --no-deps to prevent re-resolution since all deps are already installed from lockfile
-RUN cd kserve && pip install --no-build-isolation --no-deps .
+RUN cd kserve && uv pip install --no-build-isolation --no-deps .
 
-RUN cd storage && pip install --no-build-isolation --no-deps .
+RUN cd storage && uv pip install --no-build-isolation --no-deps .
 
-RUN cd autogluonserver && pip install --no-build-isolation --no-deps .
+RUN cd autogluonserver && uv pip install --no-build-isolation --no-deps .
 
 # Generate third-party licenses
 COPY pyproject.toml pyproject.toml
