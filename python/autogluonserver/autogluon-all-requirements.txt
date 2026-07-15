@@ -333,7 +333,7 @@ patsy==1.0.2
     # via statsmodels
 peft==0.17.1
     # via autogluon-timeseries
-pillow==12.2.0
+pillow==12.3.0
     # via
     #   matplotlib
     #   tensorboard
