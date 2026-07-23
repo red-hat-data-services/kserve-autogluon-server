@@ -13,7 +13,7 @@ require (
 	github.com/cloudevents/sdk-go/v2 v2.16.0
 	github.com/fsnotify/fsnotify v1.9.0
 	github.com/getkin/kin-openapi v0.131.0
-	github.com/go-logr/logr v1.4.3
+	github.com/go-logr/logr v1.4.4
 	github.com/go-logr/zapr v1.3.0
 	github.com/gofrs/uuid/v5 v5.3.0
 	github.com/google/go-cmp v0.7.0
