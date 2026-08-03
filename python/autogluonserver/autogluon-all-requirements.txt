@@ -169,7 +169,7 @@ hatchling==1.29.0
     # via autogluonserver (./autogluonserver/pyproject.toml)
 #hf-transfer==0.1.9; platform_machine != "s390x"
     # via huggingface-hub
-hf-xet==1.4.3
+hf-xet==1.5.2
     # via huggingface-hub
 httpcore==1.0.9
     # via httpx
