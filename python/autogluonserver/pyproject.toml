@@ -9,7 +9,7 @@ dependencies = [
     "kserve",
     "kserve-storage",
     "autogluon.tabular[lightgbm,xgboost,tabm,fastai]==1.5.0+rhaiv.3",
-    "autogluon.timeseries==1.5.0+rhaiv.3",
+    "autogluon.timeseries==1.6.1",
 ]
 name = "autogluonserver"
 version = "0.1.0"
