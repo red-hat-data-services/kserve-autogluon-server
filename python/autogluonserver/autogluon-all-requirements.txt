@@ -449,7 +449,7 @@ scipy==1.16.3
     #   xgboost
 sentencepiece==0.2.1
     # via transformers
-setuptools==80.10.2
+setuptools==83.0.0
     # via
     #   grpcio-tools
     #   tensorboard
