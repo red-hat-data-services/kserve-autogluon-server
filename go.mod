@@ -55,7 +55,7 @@ require (
 	knative.dev/serving v0.48.1
 	sigs.k8s.io/controller-runtime v0.22.4
 	sigs.k8s.io/gateway-api v1.4.2-0.20260116062110-0d0ca872766e
-	sigs.k8s.io/gateway-api-inference-extension v1.3.0
+	sigs.k8s.io/gateway-api-inference-extension v1.6.0
 	sigs.k8s.io/lws v0.7.0
 	sigs.k8s.io/yaml v1.6.0
 )
