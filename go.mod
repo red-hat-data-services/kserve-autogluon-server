@@ -144,7 +144,7 @@ require (
 	github.com/oasdiff/yaml3 v0.0.0-20250309153720-d2182401db90 // indirect
 	github.com/opencontainers/go-digest v1.0.0 // indirect
 	github.com/ovh/go-ovh v1.9.0 // indirect
-	github.com/parquet-go/bitpack v1.0.0 // indirect
+	github.com/parquet-go/bitpack v1.1.0 // indirect
 	github.com/parquet-go/jsonlite v1.0.0 // indirect
 	github.com/perimeterx/marshmallow v1.1.5 // indirect
 	github.com/pierrec/lz4/v4 v4.1.22 // indirect
