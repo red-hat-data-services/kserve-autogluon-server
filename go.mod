@@ -24,7 +24,7 @@ require (
 	github.com/llm-d/llm-d-workload-variant-autoscaler v0.7.0
 	github.com/onsi/ginkgo/v2 v2.28.1
 	github.com/onsi/gomega v1.39.0
-	github.com/open-telemetry/opentelemetry-operator v0.113.0
+	github.com/open-telemetry/opentelemetry-operator v0.158.0
 	github.com/parquet-go/parquet-go v0.27.0
 	github.com/pkg/errors v0.9.1
 	github.com/spf13/cobra v1.10.0
