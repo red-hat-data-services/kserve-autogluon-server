@@ -10,7 +10,7 @@ require (
 	github.com/aws/aws-sdk-go v1.55.6
 	github.com/cloudevents/sdk-go/v2 v2.16.2
 	github.com/coreos/go-semver v0.3.1
-	github.com/fsnotify/fsnotify v1.9.0
+	github.com/fsnotify/fsnotify v1.10.1
 	github.com/getkin/kin-openapi v0.131.0
 	github.com/go-logr/logr v1.4.3
 	github.com/go-logr/zapr v1.3.0
