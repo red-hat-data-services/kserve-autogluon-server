@@ -2,7 +2,7 @@
 
 absl-py==2.4.0
     # via tensorboard
-accelerate==1.13.0
+accelerate==1.14.0
     # via
     #   autogluon-timeseries
     #   chronos-forecasting
