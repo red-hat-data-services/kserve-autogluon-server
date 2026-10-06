@@ -11,7 +11,7 @@ adagio==0.2.6
     # via fugue
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.13.5
+aiohttp==3.14.3
     # via
     #   kserve (./kserve/pyproject.toml)
     #   kserve-storage (./storage/pyproject.toml)
@@ -465,7 +465,7 @@ sqlalchemy==2.0.49
     # via
     #   alembic
     #   optuna
-starlette==0.49.1
+starlette==1.3.1
     # via
     #   kserve (./kserve/pyproject.toml)
     #   fastapi
