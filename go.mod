@@ -1,8 +1,6 @@
 module github.com/kserve/kserve
 
-go 1.25.0
-
-toolchain go1.25.4
+go 1.26.4
 
 require (
 	cloud.google.com/go/storage v1.51.0
@@ -61,7 +59,7 @@ require (
 )
 
 require (
-	cel.dev/expr v0.24.0 // indirect
+	cel.dev/expr v0.25.1 // indirect
 	cloud.google.com/go v0.120.0 // indirect
 	cloud.google.com/go/auth v0.16.5 // indirect
 	cloud.google.com/go/auth/oauth2adapt v0.2.8 // indirect
@@ -91,7 +89,7 @@ require (
 	github.com/blendle/zapdriver v1.3.1 // indirect
 	github.com/cenkalti/backoff/v5 v5.0.3 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
-	github.com/cncf/xds/go v0.0.0-20251022180443-0feb69152e9f // indirect
+	github.com/cncf/xds/go v0.0.0-20251210132809-ee656c7534f5 // indirect
 	github.com/containerd/errdefs v1.0.0 // indirect
 	github.com/containerd/errdefs/pkg v0.3.0 // indirect
 	github.com/davecgh/go-spew v1.1.2-0.20180830191138-d8f796af33cc // indirect
@@ -99,7 +97,7 @@ require (
 	github.com/docker/docker v28.4.0+incompatible // indirect
 	github.com/emicklei/go-restful/v3 v3.13.0 // indirect
 	github.com/envoyproxy/go-control-plane/envoy v1.36.0 // indirect
-	github.com/envoyproxy/protoc-gen-validate v1.2.1 // indirect
+	github.com/envoyproxy/protoc-gen-validate v1.3.0 // indirect
 	github.com/evanphx/json-patch/v5 v5.9.11 // indirect
 	github.com/expr-lang/expr v1.17.2 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
@@ -153,7 +151,7 @@ require (
 	github.com/perimeterx/marshmallow v1.1.5 // indirect
 	github.com/pierrec/lz4/v4 v4.1.22 // indirect
 	github.com/pkg/browser v0.0.0-20240102092130-5ac0b6a4141c // indirect
-	github.com/planetscale/vtprotobuf v0.6.1-0.20240319094008-0393e58bdf10 // indirect
+	github.com/planetscale/vtprotobuf v0.6.1-0.20260702190614-8ae5a48058df // indirect
 	github.com/pmezard/go-difflib v1.0.1-0.20181226105442-5d4384ee4fb2 // indirect
 	github.com/prometheus/client_golang v1.23.2 // indirect
 	github.com/prometheus/client_golang/exp v0.0.0-20260108101519-fb0838f53562 // indirect
@@ -173,7 +171,7 @@ require (
 	github.com/x448/float16 v0.8.4 // indirect
 	go.opentelemetry.io/auto/sdk v1.2.1 // indirect
 	go.opentelemetry.io/collector/featuregate v1.42.0 // indirect
-	go.opentelemetry.io/contrib/detectors/gcp v1.38.0 // indirect
+	go.opentelemetry.io/contrib/detectors/gcp v1.39.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc v0.61.0 // indirect
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp v0.64.0 // indirect
 	go.opentelemetry.io/otel v1.39.0 // indirect
@@ -200,7 +198,7 @@ require (
 	google.golang.org/genproto v0.0.0-20250603155806-513f23925822 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251202230838-ff82c1b0f217 // indirect
-	google.golang.org/grpc v1.78.0 // indirect
+	google.golang.org/grpc v1.79.3 // indirect
 	gopkg.in/evanphx/json-patch.v4 v4.13.0 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
