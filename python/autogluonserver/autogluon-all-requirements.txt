@@ -74,7 +74,7 @@ charset-normalizer==3.4.7
     # via requests
 chronos-forecasting==2.2.2
     # via autogluon-timeseries
-click==8.3.2
+click==8.4.1
     # via uvicorn
 cloudevents==1.12.1
     # via
