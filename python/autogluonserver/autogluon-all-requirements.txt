@@ -11,7 +11,7 @@ adagio==0.2.6
     # via fugue
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.14.3
+aiohttp==3.14.4
     # via
     #   kserve (./kserve/pyproject.toml)
     #   kserve-storage (./storage/pyproject.toml)
@@ -333,7 +333,7 @@ patsy==1.0.2
     # via statsmodels
 peft==0.17.1
     # via autogluon-timeseries
-pillow==12.2.0
+pillow==13.0.0
     # via
     #   matplotlib
     #   tensorboard
@@ -375,6 +375,7 @@ pydantic==2.12.5
     #   kserve
 pydantic-core==2.41.5
     # via pydantic
+pyjwt==2.14.0
 pyparsing==3.3.2
     # via matplotlib
 python-dateutil==2.9.0.post0
@@ -560,7 +561,7 @@ typing-inspection==0.4.2
     #   pydantic
 tzdata==2026.1
     # via pandas
-urllib3==2.6.3
+urllib3==2.8.0
     # via
     #   kserve (./kserve/pyproject.toml)
     #   botocore
