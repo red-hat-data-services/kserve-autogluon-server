@@ -214,7 +214,7 @@ lightgbm==4.6.0
     # via
     #   autogluonserver (./autogluonserver/pyproject.toml)
     #   autogluon-tabular
-lightning==2.6.1
+lightning==2.6.6
     # via autogluon-timeseries
 lightning-utilities==0.15.3
     # via
