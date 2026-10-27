@@ -142,7 +142,7 @@ fugue==0.9.7
     #   statsforecast
 gluonts==0.16.2
     # via autogluon-timeseries
-greenlet==3.4.0
+greenlet==3.5.1
     # via sqlalchemy
 grpc-interceptor==0.15.4
     # via
