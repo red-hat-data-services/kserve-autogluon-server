@@ -148,7 +148,7 @@ grpc-interceptor==0.15.4
     # via
     #   kserve (./kserve/pyproject.toml)
     #   kserve
-grpcio==1.80.0
+grpcio==1.81.1
     # via
     #   kserve (./kserve/pyproject.toml)
     #   grpc-interceptor
