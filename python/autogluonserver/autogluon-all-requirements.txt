@@ -42,7 +42,7 @@ autogluon.core==1.5.0+rhaiv.2
     # via
     #   autogluon-tabular
     #   autogluon-timeseries
-autogluon.features==1.5.0+rhaiv.2
+autogluon.features==1.5.0+rhaiv.3
     # via
     #   autogluon-tabular
     #   autogluon-timeseries
