@@ -1,8 +1,6 @@
 module github.com/kserve/kserve
 
-go 1.25.0
-
-toolchain go1.25.4
+go 1.26.3
 
 require (
 	cloud.google.com/go/storage v1.51.0
@@ -169,7 +167,7 @@ require (
 	github.com/stretchr/objx v0.5.2 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.1 // indirect
-	github.com/twpayne/go-geom v1.6.1 // indirect
+	github.com/twpayne/go-geom v1.7.0 // indirect
 	github.com/x448/float16 v0.8.4 // indirect
 	go.opentelemetry.io/auto/sdk v1.2.1 // indirect
 	go.opentelemetry.io/collector/featuregate v1.42.0 // indirect
