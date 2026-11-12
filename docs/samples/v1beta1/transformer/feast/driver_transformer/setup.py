@@ -24,7 +24,7 @@ setup(
     description="Driver transformer",
     python_requires=">=3.9",
     packages=find_packages("driver_transformer"),
-    install_requires=["kserve", "requests>=2.22.0", "numpy>=1.16.3"],
+    install_requires=["kserve", "requests>=2.33.0", "numpy>=1.16.3"],
     tests_require=tests_require,
     extras_require={"test": tests_require},
 )
