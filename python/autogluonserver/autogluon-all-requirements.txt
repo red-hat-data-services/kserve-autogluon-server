@@ -361,7 +361,7 @@ psutil==5.9.8
     #   autogluon-common
     #   kserve
     #   peft
-pyarrow==20.0.0
+pyarrow==23.0.1
     # via
     #   autogluon-common
     #   triad
