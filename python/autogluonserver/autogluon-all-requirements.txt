@@ -375,7 +375,7 @@ pydantic==2.12.5
     #   kserve
 pydantic-core==2.41.5
     # via pydantic
-pyjwt==2.14.0
+pyjwt==2.15.1
 pyparsing==3.3.2
     # via matplotlib
 python-dateutil==2.9.0.post0
