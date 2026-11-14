@@ -206,7 +206,7 @@ joblib==1.5.3
     #   scikit-learn
 kiwisolver==1.5.0
     # via matplotlib
-kubernetes==35.0.0
+kubernetes==36.0.2
     # via
     #   kserve (./kserve/pyproject.toml)
     #   kserve
