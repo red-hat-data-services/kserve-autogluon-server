@@ -16,7 +16,7 @@ dependencies = [
     "huggingface-hub>=0.32.0",
     "hf-xet>=1.5.0",
     "dulwich>=0.21.0",
-    "cryptography>=46.0.5", # CVE-2026-26007 cryptography Subgroup Attack Due to Missing Subgroup Validation for SECT Curves
+    "cryptography>=50.0.0", # CVE-2026-26007 cryptography Subgroup Attack Due to Missing Subgroup Validation for SECT Curves
     # CVE-2026-32597 PyJWT accepts unknown `crit` header extensions (RFC 7515 §4.1.11 MUST violation)
     # Pinning because it is a transitive dependency.
     "pyjwt>=2.12.0",
