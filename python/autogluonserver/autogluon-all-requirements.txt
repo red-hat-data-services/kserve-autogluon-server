@@ -115,8 +115,9 @@ boto3==1.43.24 \
     #   autogluon-common
     #   autogluon-core
     #   kserve-storage
-botocore==1.43.24 \
-    --hash=sha256:1136ebccef4868566f5cd82e00cbd5da122bc29a61b5eba003931458d893c896
+botocore==1.43.28 \
+    --hash=sha256:8147adea89b4c9324e842cd8c01ea1a0e17c92cb6ebeaa8cb774f821cb5a7629 \
+    --hash=sha256:9bbad501a68e4ffdbeff76a382507f5d7827abc316f34a218ab76f5293e6c78d
     # via
     #   boto3
     #   s3transfer
