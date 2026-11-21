@@ -1024,8 +1024,9 @@ urllib3==2.7.0 \
     #   kserve
     #   kubernetes
     #   requests
-utilsforecast==0.2.11 \
-    --hash=sha256:c5e29508c05744a2c37171e9984c483c2e10763724a25553da59711bce77f948
+utilsforecast==0.2.16 \
+    --hash=sha256:985e7bbe999cd2c27e331c5c49e8b7934c617f3df0b933c105fbe71dae0283ed \
+    --hash=sha256:dca406231d002279562ae897dbcb9e419c2fc5bf48908be02834b3187ce5a52b
     # via
     #   autogluon-timeseries
     #   mlforecast
