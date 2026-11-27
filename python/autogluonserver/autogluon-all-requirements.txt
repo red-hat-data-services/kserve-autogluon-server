@@ -46,7 +46,7 @@ autogluon.features==1.5.0+rhaiv.2
     # via
     #   autogluon-tabular
     #   autogluon-timeseries
-autogluon.tabular==1.5.0+rhaiv.2
+autogluon.tabular==1.5.0+rhaiv.3
     # via
     #   autogluonserver (./autogluonserver/pyproject.toml)
     #   autogluon-timeseries
