@@ -9,7 +9,7 @@ accelerate==1.13.0
     #   peft
 adagio==0.2.6
     # via fugue
-aiohappyeyeballs==2.6.1
+aiohappyeyeballs==2.6.2
     # via aiohttp
 aiohttp==3.13.5
     # via
